@@ -1,2 +1,2 @@
 # Haskell
-Homeworks for Haskell course
+Homeworks for Haskell [course in ITMO](https://github.com/jagajaga/FP-course-ITMO)
