@@ -1,0 +1,81 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: ed778ac1e9628bcddb94b662d545482fcbb2c8fcd0151f59de0911e0e559ec35
+
+name:           homework2
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/Github username here/homework2#readme>
+homepage:       https://github.com/Github username here/homework2#readme
+bug-reports:    https://github.com/Github username here/homework2/issues
+author:         Author name here
+maintainer:     Author email here
+copyright:      2019 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/Github username here/homework2
+
+library
+  exposed-modules:
+      Lib
+      Block1.Task11
+      Block1.Task12
+      Block1.Task13
+      Block2.Task21
+      Block2.Task22
+      Block3.Task31
+      Block3.Task32
+      Block3.Task33
+      Block3.Task34
+  other-modules:
+      Paths_homework2
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+      , mtl
+  default-language: Haskell2010
+
+executable homework2-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_homework2
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , homework2
+  default-language: Haskell2010
+
+test-suite homework2-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_homework2
+      Test11
+      Test12
+      Test13
+      Test22
+      Test32
+      Test33
+      Test34
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , homework2
+    , tasty
+    , tasty-hunit
+  default-language: Haskell2010

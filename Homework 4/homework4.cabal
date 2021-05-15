@@ -1,0 +1,110 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 69160a9b7d81e8e429c4e60575b959e746ca81c1e99db9a5d17e1eee3ce30582
+
+name:           homework4
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/Github username here/homework4#readme>
+homepage:       https://github.com/Github username here/homework4#readme
+bug-reports:    https://github.com/Github username here/homework4/issues
+author:         Author name here
+maintainer:     Author email here
+copyright:      2019 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/Github username here/homework4
+
+library
+  exposed-modules:
+      Lib
+      Task1Slow
+      Task1Fast
+      Task2Slow
+      Task2Fast
+      Task3
+      Task6
+      Task7
+      Task8
+  other-modules:
+      Paths_homework4
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , threads
+    , microlens
+    , filepath
+    , directory
+    , deepseq
+    , vector
+    , stm
+    , hashable
+    , random
+    , comonad
+    , process
+    , ansi-terminal
+    , containers
+    , monad-par
+    , monad-par-extras
+    , abstract-par
+  default-language: Haskell2010
+
+executable homework4-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_homework4
+  hs-source-dirs:
+      app
+  ghc-options: -eventlog -O2 -threaded -rtsopts -with-rtsopts=-N6
+  build-depends:
+      base >=4.7 && <5
+    , homework4
+  default-language: Haskell2010
+
+test-suite homework4-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_homework4
+       Task1Tests
+       Task2Tests
+       Task3Tests
+       Task6Tests
+       Task7Tests
+  hs-source-dirs:
+      test
+  ghc-options: -eventlog -O2 -threaded -rtsopts -with-rtsopts=-N6
+  build-depends:
+      base >=4.7 && <5
+    , homework4
+    , directory
+    , filepath
+    , threads
+    , tasty
+    , tasty-hunit
+    , microlens
+  default-language: Haskell2010
+
+benchmark hw4-benchmark
+  build-depends:
+      base
+    , criterion
+    , homework4
+    , random
+    , threads
+  default-language: Haskell2010
+  ghc-options:      -eventlog -O2 -threaded -rtsopts -with-rtsopts=-N6
+  hs-source-dirs:   bench
+  main-is:          Main.hs
+  type:             exitcode-stdio-1.0

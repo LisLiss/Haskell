@@ -1,0 +1,89 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: fb41a50693ad55dedfe4b861162a6b2a094981d14567b75021097734fa968139
+
+name:           homework3
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/Github username here/homework3#readme>
+homepage:       https://github.com/Github username here/homework3#readme
+bug-reports:    https://github.com/Github username here/homework3/issues
+author:         Author name here
+maintainer:     Author email here
+copyright:      2019 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/Github username here/homework3
+
+library
+  exposed-modules:
+      Command
+      Error
+      File
+      Folder
+      Lib
+      Manager
+      Parser
+  other-modules:
+      Paths_homework3
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , directory
+    , time
+    , bytestring
+    , mtl
+    , utf8-string
+    , containers
+    , filepath
+    , optparse-applicative
+    , safe-exceptions
+  default-language: Haskell2010
+
+executable homework3-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_homework3
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , homework3
+    , safe-exceptions
+    , directory
+  default-language: Haskell2010
+
+test-suite homework3-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_homework3
+      Tests
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , homework3
+    , tasty
+    , tasty-hunit
+    , directory
+    , filepath
+    , containers
+    , bytestring
+    , utf8-string
+    , mtl
+    , time
+  default-language: Haskell2010
